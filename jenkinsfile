@@ -1,0 +1,23 @@
+pipeline {
+    agent any
+
+    stages {
+
+        stage('Checkout') {
+            steps {
+                // Pull code from Git
+                git branch: 'main', url: 'https://github.com/your-user/your-repo.git'
+            }
+        }
+
+        stage('Build') {
+            steps {
+                // Example build step (optional)
+                echo 'Building the project...'
+                // For Node.js: sh 'npm install'
+                // For Java: sh './gradlew build'
+            }
+        }
+
+        stage('Test') {
+            steps {
